@@ -1,0 +1,28 @@
+
+‘’’
+#Volumes & Bind Mounts
+#docker run -v /app/data....   =======>   Anonymous Volume (This first example would create an anonymous volume since you don't assign any name.)
+#
+#docker run -v data:/app/data... ===========> Named Volume (The second example would create a named volume. since you do assign a name.)
+#
+#docker run -v /path/to/code:/app/code...  ============> Bind Mount (And in the third example, the name is actually. an absolute path to a folder on your host machine and therefore this is then a bind mount.)
+#
+#
+#
+#
+#
+#
+
+
+
+Anonymous
+Anonymous volumes are not given an explicit name when they are first mounted into a container, so Docker gives them a random name that is guaranteed to be unique within a given Docker host.
+With anonymous volumes, you create a volume which is kind of attached to a container. It's removed if the container is removed. It survives container shut down and restart, but if it's removed, it's gone and therefore if you use the dash - -rm when you ran the container, of course the volume is all gone when you stop the container because stopping then basically also means removing the container. Therefore, since it is removed when the container is removed, you can't use anonymous volumes to share data across containers. And you also can't use it to save data across container destruction and recreation as you saw. Anonymous volumes are not useful for that. But anonymous volumes either created with the volume instruction in the dockerfile or created with -v, like this, can be useful for locking in certain data which already exists in the container. They can be useful for avoiding that this data then gets overwritten by another module. And that's something where anonymous volumes can save the day.
+
+Named Volume 
+Docker-named volumes are a way to persist data in Docker containers. They allow you to create a named volume and mount it to a container so that the data stored in the volume is preserved even if the container is stopped or removed.
+
+
+
+Bind Mount 
+bind mount allows us to mount a file system or a subset of a file system in two places at once. They can be used for various reasons when parts of the file system need to be made available in different places. ‘’’
