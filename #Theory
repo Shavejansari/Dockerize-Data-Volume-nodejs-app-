@@ -8,7 +8,7 @@
 #docker run -v /path/to/code:/app/code...  ============> Bind Mount (And in the third example, the name is actually. an absolute path to a folder on your host machine and therefore this is then a bind mount.)
 #
 #
-#
+#docker run -d -p 3000:80 --rm --name volumecon -v sono:/app/feedback -v "/media/mohd/Devops/Zapbuild/Docker/data-volumes-02-added-dockerfile/data-volumes-02-added-dockerfile:/app" -v /app/node_modules volumeimg
 #
 #
 #
